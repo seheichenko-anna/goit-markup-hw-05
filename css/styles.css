@@ -457,11 +457,12 @@ img {
 
 
 .submit-btn {
+    font-family: "Roboto", sans-serif;
     align-self: flex-end;
     border-radius: 4px;
     background: var(--accent-color);
     padding: 8px 24px;
-    min-width: 117px;
+    min-width: 165px;
     border: none;
     color: var(--white-color);
     text-align: center;
@@ -493,7 +494,7 @@ img {
     background-color: transparent;
     color: var(--white-color);
     font-size: 12px;
-    line-height: 2;
+    line-height: 1.5;
     letter-spacing: 0.04em;
 }
 
@@ -728,13 +729,14 @@ img {
 
 
 .modal-form-input {
-    padding: 11px 16px;
-    padding-left: 40px;
+    padding-left: 38px;
     width: 100%;
     height: 40px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    outline: transparent;
 }
 
 
@@ -748,19 +750,24 @@ img {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
+.input-wrapper.textarea {
+    margin-bottom: 16px;
+}
 
 .comment-input {
     resize: none;
     font-size: 12px;
-    min-height: 120px;
-    margin-bottom: 16px;
+    width: 100%;
+    height: 120px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.40);
     padding: 8px 16px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 4px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: transparent;
+    background-color: transparent;
 }
 
 
@@ -768,7 +775,7 @@ img {
 .modal-form-input:focus,
 .comment-input:focus {
     border-color: var(--accent-color);
-    outline: transparent;
+
 
 }
 
@@ -781,43 +788,39 @@ img {
     line-height: 1.17;
     letter-spacing: 0.04em;
     cursor: pointer;
-    display: flex;
-    align-items: center;
+    display: block;
     color: #8E8F99;
-    gap: 8px;
+
+}
+
+.modal-form-input-checkbox {
+    margin-right: 8px;
 }
 
 .input-wrapper-agreement {
     margin-bottom: 24px;
 }
 
-
-.modal-form-input-ckeckbox {
-    display: none;
+.icon-checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-icon {
-    flex-shrink: 0;
+.modal-form-input-checkbox:checked+.agreement-label .icon-checkbox-wrapper {
+    background-color: var(--hover-color);
+    border: none;
+    fill: var(--third-color);
 }
 
-.default-icon {
-    stroke-width: 1px;
-    fill: none;
-    stroke: rgba(46, 47, 66, 0.40);
-}
-
-
-.click-icon {
-    display: none;
-}
-
-.modal-form-input-ckeckbox:checked~.click-icon {
-    display: block;
-}
-
-.modal-form-input-ckeckbox:checked~.default-icon {
-    display: none;
-}
 
 .link-privacy-policy {
     color: var(--accent-color);
